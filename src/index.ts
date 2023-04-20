@@ -4,9 +4,7 @@ import YAML from 'yaml'
 
 dotenv.config();
 
-import { PromptRequest } from "./types"
-import { callOpenAI, promptOpenAI } from "./tinyagi";
-import { AgentPromptGenerator, PromptPart } from "./promptinator"
+import { callOpenAI, promptOpenAI, AgentPromptGenerator, PromptRequest, PromptPart } from "./agi"
 
 const config = YAML.parse(fs.readFileSync('tests.yml', 'utf8'));
 
@@ -47,6 +45,5 @@ const config = YAML.parse(fs.readFileSync('tests.yml', 'utf8'));
             console.log(response);
         })
         .catch(console.error);
-        
 
 })();

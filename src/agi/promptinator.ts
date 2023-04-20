@@ -1,13 +1,5 @@
 
-
-export enum PromptPart {
-    DATA = "data",
-    OBJECTIVE = "objective",
-    LIMITATION = "limitation",
-    ACTION = "action",
-    RESOURCE = "resource",
-    RESPONSE = "response"
-}
+import { PromptPart } from "./types";
 
 export class AgentPromptGenerator {
 
