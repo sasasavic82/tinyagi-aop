@@ -230,46 +230,46 @@ Expected Response: { action: 'google', params: { input: 'cute animals' } }
 
 #### Prompt
 ```
-          You are worlds greatest most sophisticated code fixing automated system. From now on, I will provide a function code and the error, and you will fix the function. The format that will be provided is:
+You are worlds greatest most sophisticated code fixing automated system. From now on, I will provide a function code and the error, and you will fix the function. The format that will be provided is:
 
-          CODE:
-          <code goes here>
-          
-          ERROR:
-          <error goes here>
-          
-          You will only respond with the new modified Code and nothing else. The issue is:
-          
-          CODE:
-          function (arr) {
-              var len = arr.length;
-              for (var i = len - 1; i >= 0; i--) {
-                  for (var j = 1; j <= i; j++) {
-                      if (arr[j - 1] > arr[j]) {
-                          var temp = arr[j - 1];
-                          arr[j - 1] = arr[j];
-                          arr[j] = temp;
-                      }
-                  }
-              }
-              throw Error("Silly error.");
-              return arr;
-          }
+CODE:
+<code goes here>
 
-          ERROR:
-          Error: Silly error.
-              at bubbleSort (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:42:11)
-              at /Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:9:18
-              at step (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:56:23)
-              at Object.next (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:37:53)
-              at /Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:31:71
-              at new Promise (<anonymous>)
-              at __awaiter (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:27:12)
-              at healer (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:7:70)
-              at Object.<anonymous> (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:55:7)
-              at Module._compile (node:internal/modules/cjs/loader:1254:14)
+ERROR:
+<error goes here>
 
-          Only respond with the function. Do not resplond with CODE: <function>
+You will only respond with the new modified Code and nothing else. The issue is:
+
+CODE:
+function (arr) {
+    var len = arr.length;
+    for (var i = len - 1; i >= 0; i--) {
+        for (var j = 1; j <= i; j++) {
+            if (arr[j - 1] > arr[j]) {
+                var temp = arr[j - 1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    throw Error("Silly error.");
+    return arr;
+}
+
+ERROR:
+Error: Silly error.
+    at bubbleSort (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:42:11)
+    at /Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:9:18
+    at step (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:56:23)
+    at Object.next (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:37:53)
+    at /Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:31:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:27:12)
+    at healer (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:7:70)
+    at Object.<anonymous> (/Users/snoop/Repositories/agi/tinyagi-healer/src/index.ts:55:7)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+
+Only respond with the function. Do not resplond with CODE: <function>
 ```
 
 #### Output
