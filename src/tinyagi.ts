@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
-import { AgiRequest } from "./types"
+import { AgiRequest, Model } from "./types"
 
 const config = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -26,4 +26,13 @@ export const callOpenAI = async (request: AgiRequest): Promise<string | undefine
         throw e;
     }
 };
+
+export const promptOpenAI = async (prompt: string): Promise<string | undefined> => {
+    return callOpenAI({
+        messages: [{role: "user", content: prompt}],
+        max_tokens: 2000,
+        temperature: 0.7,
+        model: Model.GPT3TURBO
+    })
+}
 

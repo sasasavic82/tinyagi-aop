@@ -19,6 +19,7 @@ export type AgiRequest = {
 }
 
 export type PromptRequest<T> = AgiRequest & {
+    name: string
     expect: T
 }
 
