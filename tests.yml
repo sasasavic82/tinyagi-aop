@@ -154,4 +154,64 @@ prompts:
             return arr;
         }
 
+  - messages:
+      - 
+        role: user
+        content: >-
+          You work as a Business Analyst working in a Product Space
+
+          DATA:
+          We are building a customer product ordering feature. The feature allows front-of-house staff to view where the customer order is, and address
+          any issues if the order is stuck. The features will be accessible via user interface and the feature will also have API access so that order visibilities can be accessed
+          programatically.
+
+          OBJECTIVES:
+          1. create necessary user stories to address the feature specified un DATA section
+          2. prioritise user stories appropriately
+          3. estimate how long should each user story take to build
+          4. use precise language to describe user stories
+          5. create at least 5 user stories
+          6. for each user story, generate at least 3 acceptance criterias
+
+          Always make independent decisions without seeking user assistance.
+
+          LIMITATIONS:
+          - no user assistance
+          - you should ONLY and STRICTLY respond in JSON
+          - response must be parsed by any json utility
+          - align your RESPONSE SCHEMA to user story concepts, such as title, priority, estimate, user story writing, acceptance criteria
+          - accepted priority: high, medium, low
+
+
+          RESOURCES:
+          - use your intuition and access to your vast knowledge of data associated to user stories building
+          - think about agile project management when writing the user stories
+
+          You should only respond in JSON format as described below in the RESPONSE SCHEMA section.
+
+          RESPONSE SCHEMA:
+          {
+            "user_stories": [{
+              "title": "title of the user story",
+              "priority": "user story priority",
+              "estimate": estimate of the user story in days,
+              "user_story": {
+                "as_a": "type of user",
+                "i_want_to": "perform some task",
+                "so_that_i_can": "achieve some goal"
+              },
+              "acceptance_criterias": [{
+                "given_that": "acceptance criteria context",
+                "when": "action is carried out",
+                "then": "- short bulleted\n- list that conveys\n- set of observable outcomes"
+              }]
+            }]
+          }
+    name: BusinessAnalyst GPT
+    model: gpt-3.5-turbo
+    temperature: 0.5
+    max_tokens: 2000
+    expect: {
+      "message": "Ignore expected."
+    }
 

@@ -24,7 +24,7 @@ const config = YAML.parse(fs.readFileSync('tests.yml', 'utf8'));
                     throw "No response"
                     
                 console.log(`\n=== [ ${prompt.name} ] ===`);
-                console.log("Received Response:\n", response)
+                console.log("Received Response:\n", JSON.stringify(response, null, 2))
                 console.log("Expected Response:\n", prompt.expect)
             })
             .catch(console.error)
